@@ -12,9 +12,11 @@
         <activity android:name=".PCSurabayaActivity"></activity>
         <activity android:name=".PCMalangActivity" />
         <activity android:name=".PetCareActivity" />
+        <activity android:name=".AdoptionActivity"></activity>
+<!--        <activity android:name=".HomepageActivity" />-->
         <activity android:name=".DummyActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomepageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
