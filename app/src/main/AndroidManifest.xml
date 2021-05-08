@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetPAPB">
-        <activity android:name=".PCSurabayaActivity"></activity>
+        <activity android:name=".PCSurabayaActivity"/>
         <activity android:name=".PCMalangActivity" />
         <activity android:name=".PetCareActivity" />
-        <activity android:name=".AdoptionActivity"></activity>
+        <activity android:name=".AdoptionActivity"/>
 <!--        <activity android:name=".HomepageActivity" />-->
         <activity android:name=".DummyActivity" />
         <activity android:name=".RegisterActivity" />
