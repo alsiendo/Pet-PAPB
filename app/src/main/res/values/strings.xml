@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Pet-PAPB</string>
+    <string-array name="petCareCities">
+        <item>Please select a city</item>
+        <item>Malang</item>
+        <item>Surabaya</item>
+    </string-array>
 </resources>
