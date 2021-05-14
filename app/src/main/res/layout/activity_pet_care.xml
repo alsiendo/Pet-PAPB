@@ -7,10 +7,10 @@
     tools:context=".PetCareActivity">
 
     <Button
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonBackPetCare"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="B"
+        android:text="@string/back"
         android:textColor="@color/cyan"
         android:textSize="30sp"
         android:background="@android:color/transparent"
@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonBack"
+        app:layout_constraintStart_toEndOf="@+id/buttonBackPetCare"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
 
