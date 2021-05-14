@@ -66,7 +66,7 @@ public class PCMalangActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.buttonBackPetCareMalang:
                 //Ganti jadi halaman homepage
-                startActivity(new Intent(this, DummyActivity.class));
+                startActivity(new Intent(this, HomepageActivity.class));
                 break;
 
         }

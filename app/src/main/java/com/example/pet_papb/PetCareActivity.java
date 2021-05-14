@@ -55,7 +55,7 @@ public class PetCareActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.buttonBackPetCare:
                 //Ganti jadi ke halaman homepage
-                startActivity(new Intent(this, DummyActivity.class));
+                startActivity(new Intent(this, HomepageActivity.class));
                 break;
 
         }

@@ -67,7 +67,7 @@ public class PCSurabayaActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()){
             case R.id.buttonBackPetCareSurabaya:
                 //Ganti jadi halaman homepage
-                startActivity(new Intent(this, DummyActivity.class));
+                startActivity(new Intent(this, HomepageActivity.class));
                 break;
 
         }

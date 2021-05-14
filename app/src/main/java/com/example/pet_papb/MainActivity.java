@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     //Tempat redirect halaman pas login. DummyActivity ganti jadi punyamu.
-                    startActivity(new Intent(MainActivity.this, DummyActivity.class));
+                    startActivity(new Intent(MainActivity.this, HomepageActivity.class));
                 }else{
                     Toast.makeText(MainActivity.this, "Failed to login, please check your information!", Toast.LENGTH_LONG).show();
                 }
