@@ -7,14 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
-public class PetCareActivity extends AppCompatActivity {
+public class PetCareActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private Button backPetCare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_care);
+
+        //Tombol Back
+        backPetCare = (Button) findViewById(R.id.buttonBackPetCare);
+        backPetCare.setOnClickListener(this);
 
         //Drop Down Menu
         Spinner mySpinner = (Spinner) findViewById(R.id.spinnerPetCare);
@@ -41,5 +48,16 @@ public class PetCareActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.buttonBackPetCare:
+                //Ganti jadi ke halaman homepage
+                startActivity(new Intent(this, HomepageActivity.class));
+                break;
+
+        }
     }
 }

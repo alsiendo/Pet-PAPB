@@ -19,10 +19,13 @@ public class DummyActivity extends AppCompatActivity implements View.OnClickList
         dummyPetCare.setOnClickListener(this);
     }
 
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.dummyBtnPetCare:
+                //Ganti dari halaman homepage
                 startActivity(new Intent(this, PetCareActivity.class));
                 break;
 

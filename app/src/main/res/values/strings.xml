@@ -1,9 +1,19 @@
 <resources>
     <string name="app_name">Pet-PAPB</string>
+    <string name="back"><![CDATA[<]]></string>
     <string-array name="petCareCities">
         <item>Please select a city</item>
         <item>Malang</item>
         <item>Surabaya</item>
     </string-array>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="petCareMalang">
+        <item>Malang</item>
+        <item>Surabaya</item>
+    </string-array>
+
+    <string-array name="petCareSurabaya">
+        <item>Surabaya</item>
+        <item>Malang</item>
+    </string-array>
 </resources>
