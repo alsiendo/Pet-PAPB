@@ -9,25 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetPAPB">
-        <activity android:name=".PCSurabayaTwoDetailActivity"></activity>
+        <activity android:name=".DetailAdoptionActivity"
+            android:parentActivityName=".AdoptionActivity"
+            />
+        <activity android:name=".PCSurabayaTwoDetailActivity" />
         <activity android:name=".PCSurabayaOneDetailActivity" />
         <activity android:name=".PCMalangTwoDetailActivity" />
         <activity android:name=".PCMalangOneDetailActivity" />
         <activity android:name=".PCSurabayaActivity" />
         <activity android:name=".PCMalangActivity" />
-        <activity android:name=".PetCareActivity" />
-        <activity android:name=".AdoptionActivity"/>
-<!--        <activity android:name=".HomepageActivity" />-->
+        <activity android:name=".PetCareActivity" /> <!-- <activity android:name=".AdoptionActivity"/> -->
         <activity android:name=".DummyActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomepageActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomepageActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AdoptionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<!--Untuk set main-->
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
+
     </application>
 
 </manifest>
