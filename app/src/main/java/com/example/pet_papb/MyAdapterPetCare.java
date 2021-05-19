@@ -34,6 +34,7 @@ public class MyAdapterPetCare extends RecyclerView.Adapter<MyHolderPetCare>  {
         return new MyHolderPetCare(view);//
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull MyHolderPetCare myHolder, int i) {
         myHolder.mtitle.setText(models.get(i).getTitle());// i merupakan posisi
