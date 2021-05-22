@@ -2,6 +2,7 @@ package com.example.pet_papb;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private EditText etUsername, etEmail, etPassword;
 
+    private SwitchCompat switchAdmin;
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -44,6 +47,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etUsername = (EditText) findViewById(R.id.editTextUsername);
         etEmail = (EditText) findViewById(R.id.editTextRegisterEmail);
         etPassword = (EditText) findViewById(R.id.editTextRegisterPassword);
+
+        switchAdmin = findViewById(R.id.switchAdminButton);
     }
 
     @Override
@@ -55,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.buttonRegister:
                 buttonRegister();
                 break;
+
         }
     }
 
@@ -93,26 +99,49 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            User user = new User(username, email, password);
+                        if(switchAdmin.isChecked()){
+                            if (task.isSuccessful()){
+                                Admin admin = new Admin(username, email, password);
+                                FirebaseDatabase.getInstance().getReference("Admins")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(admin).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
 
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if(task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                                    }else{
-                                        Toast.makeText(RegisterActivity.this, "Failed to register, try again!", Toast.LENGTH_LONG).show();
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                        }else{
+                                            Toast.makeText(RegisterActivity.this, "Failed to register, try again!", Toast.LENGTH_LONG).show();
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }else{
+                                Toast.makeText(RegisterActivity.this, "Failed to register the user, try again!", Toast.LENGTH_LONG).show();
+                            }
                         }else{
-                            Toast.makeText(RegisterActivity.this, "Failed to register the user, try again!", Toast.LENGTH_LONG).show();
+                            if (task.isSuccessful()){
+                                User user = new User(username, email, password);
+
+                                FirebaseDatabase.getInstance().getReference("Users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                        }else{
+                                            Toast.makeText(RegisterActivity.this, "Failed to register, try again!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                            }else{
+                                Toast.makeText(RegisterActivity.this, "Failed to register the user, try again!", Toast.LENGTH_LONG).show();
+                            }
                         }
+
                     }
                 });
     }
