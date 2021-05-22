@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class DummyActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button dummyPetCare;
+    private Button dummyPetCare, logout;
+
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +21,11 @@ public class DummyActivity extends AppCompatActivity implements View.OnClickList
 
         dummyPetCare = (Button) findViewById(R.id.dummyBtnPetCare);
         dummyPetCare.setOnClickListener(this);
+
+        logout = (Button) findViewById(R.id.btnLogout);
+        logout.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -28,6 +37,9 @@ public class DummyActivity extends AppCompatActivity implements View.OnClickList
                 //Ganti dari halaman homepage
                 startActivity(new Intent(this, PetCareActivity.class));
                 break;
+            case R.id.btnLogout:
+                mAuth.signOut();
+                startActivity(new Intent(DummyActivity.this, MainActivity.class));
 
         }
     }
