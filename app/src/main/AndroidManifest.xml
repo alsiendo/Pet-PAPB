@@ -9,35 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetPAPB">
-        <activity android:name=".DetailAdoptionActivity"
-            android:parentActivityName=".AdoptionActivity"
-            />
-        <activity android:name=".PCSurabayaTwoDetailActivity" />
-        <activity android:name=".PCSurabayaOneDetailActivity" />
-        <activity android:name=".PCMalangTwoDetailActivity" />
-        <activity android:name=".PCMalangOneDetailActivity" />
-        <activity android:name=".PCSurabayaActivity" />
-        <activity android:name=".PCMalangActivity" />
-        <activity android:name=".PetCareActivity" /> <!-- <activity android:name=".AdoptionActivity"/> -->
-        <activity android:name=".DummyActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomepageActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AdoptionActivity">
+
+        <activity android:name=".UI.Kosongan2Activity" />
+        <activity android:name=".UI.KosonganActivity" />
+        <activity
+            android:name=".UI.Adoption1.DetailAdoptionActivity"
+            android:parentActivityName=".UI.Adoption1.AdoptionActivity" />
+        <activity android:name=".UI.PCSurabayaTwoDetailActivity" />
+        <activity android:name=".UI.PCSurabayaOneDetailActivity" />
+        <activity android:name=".UI.PCMalangTwoDetailActivity" />
+        <activity android:name=".UI.PCMalangOneDetailActivity" />
+        <activity android:name=".UI.PCSurabayaActivity" />
+        <activity android:name=".UI.PCMalangActivity" />
+        <activity android:name=".UI.PetCareActivity" /> <!-- <activity android:name=".AdoptionActivity"/> -->
+        <activity android:name=".UI.DummyActivity" />
+
+        <activity android:name=".UI.Homepage1.HomepageActivity" /> <!-- <activity android:name=".UI.Adoption1.AdoptionActivity"> -->
+
+
+        <activity android:name=".UI.Login.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UI.Login.SignupActivity"
+            android:parentActivityName=".UI.Login.StartActivity" />
+        <activity
+            android:name=".UI.Login.LoginActivity"
+            android:parentActivityName=".UI.Login.StartActivity" />
 
-<!--Untuk set main-->
-<!--        <intent-filter>-->
-<!--            <action android:name="android.intent.action.MAIN" />-->
-
-<!--            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--        </intent-filter>-->
-
+        <activity android:name=".UI.Homepage2.Homepage2Activity" />
+        <activity
+            android:name=".UI.Homepage2.PostPetActivity"
+            android:parentActivityName=".UI.Homepage2.Homepage2Activity"/>
     </application>
 
 </manifest>
