@@ -14,13 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pet_papb.Admin;
 import com.example.pet_papb.R;
 import com.example.pet_papb.UI.Homepage1.HomepageActivity;
 import com.example.pet_papb.UI.Homepage2.Homepage2Activity;
-import com.example.pet_papb.UI.Kosongan2Activity;
-import com.example.pet_papb.UI.KosonganActivity;
-import com.example.pet_papb.UI.Users;
+import com.example.pet_papb.Model.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

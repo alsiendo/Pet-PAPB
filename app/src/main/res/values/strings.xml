@@ -16,4 +16,15 @@
         <item>Surabaya</item>
         <item>Malang</item>
     </string-array>
+
+    <string-array name="lokasiHewan">
+        <item>Surabaya</item>
+        <item>Malang</item>
+    </string-array>
+
+    <string-array name="jenisHewan">
+        <item>Kucing</item>
+        <item>Anjing</item>
+        <item>Kelinci</item>
+    </string-array>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.pet_papb;
+package com.example.pet_papb.Model;
 
 public class Admin {
 
