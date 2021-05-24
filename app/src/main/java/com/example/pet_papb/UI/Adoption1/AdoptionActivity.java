@@ -78,7 +78,7 @@ public class AdoptionActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(CatViewHolder catViewHolder, DataAdoption dataAdoption, int i) {
                 catViewHolder.setNama(dataAdoption.getNamaHewan());
-                catViewHolder.setAlamat(dataAdoption.getAlamathewan());
+                catViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 catViewHolder.setGambar(dataAdoption.getGambarHewan());
 
                 catViewHolder.myview.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,7 @@ public class AdoptionActivity extends AppCompatActivity {
                         Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
-                        intent.putExtra("alamatHewan", dataAdoption.getAlamathewan());
+                        intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
                         startActivity(intent);
                     }
@@ -107,7 +107,7 @@ public class AdoptionActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(DogViewHolder dogViewHolder, DataAdoption dataAdoption, int i) {
                 dogViewHolder.setNama(dataAdoption.getNamaHewan());
-                dogViewHolder.setAlamat(dataAdoption.getAlamathewan());
+                dogViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 dogViewHolder.setGambar(dataAdoption.getGambarHewan());
 
                 dogViewHolder.myview.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +116,7 @@ public class AdoptionActivity extends AppCompatActivity {
                         Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
-                        intent.putExtra("alamatHewan", dataAdoption.getAlamathewan());
+                        intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
                         startActivity(intent);
                     }
@@ -136,7 +136,7 @@ public class AdoptionActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(RabbitViewHolder rabbitViewHolder, DataAdoption dataAdoption, int i) {
                 rabbitViewHolder.setNama(dataAdoption.getNamaHewan());
-                rabbitViewHolder.setAlamat(dataAdoption.getAlamathewan());
+                rabbitViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 rabbitViewHolder.setGambar(dataAdoption.getGambarHewan());
 
                 rabbitViewHolder.myview.setOnClickListener(new View.OnClickListener() {
@@ -145,7 +145,7 @@ public class AdoptionActivity extends AppCompatActivity {
                         Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
-                        intent.putExtra("alamatHewan", dataAdoption.getAlamathewan());
+                        intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
                         startActivity(intent);
                     }

@@ -46,8 +46,7 @@
         <activity android:name=".UI.Homepage2.Homepage2Activity" />
         <activity
             android:name=".UI.Homepage2.PostPetActivity"
-            android:parentActivityName=".UI.Homepage2.Homepage2Activity"
-            android:exported="true"/>
+            android:parentActivityName=".UI.Homepage2.Homepage2Activity"/>
     </application>
 
 </manifest>

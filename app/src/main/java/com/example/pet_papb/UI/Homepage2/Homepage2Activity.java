@@ -49,7 +49,6 @@ public class Homepage2Activity extends AppCompatActivity {
                         selectedFragment = new Home2Fragment();
                         Intent intent = new Intent(Homepage2Activity.this, PostPetActivity.class);
                         startActivity(intent);
-                        finish();
                         break;
                     case R.id.nav_profile:
                         selectedFragment = new ProfileFragment();
