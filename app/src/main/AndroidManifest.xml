@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetPAPB">
-
+        <activity android:name=".UI.MessageActivity" >
+        </activity>
         <activity android:name=".UI.Kosongan2Activity" />
         <activity android:name=".UI.KosonganActivity" />
         <activity
