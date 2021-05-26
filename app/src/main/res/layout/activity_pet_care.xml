@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".UI.PetCareActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="526dp"
+        android:layout_height="730dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepage12" />
+
     <Button
         android:id="@+id/buttonBackPetCare"
         android:layout_width="50dp"
@@ -48,12 +57,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPetCare" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="526dp"
-        android:layout_height="730dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homepage12" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
