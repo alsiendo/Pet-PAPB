@@ -41,16 +41,22 @@ public class DetailAdoptionActivity extends AppCompatActivity {
         alamatHewan = findViewById(R.id.tvAlamatHewan);
         kategoriHewan = findViewById(R.id.tvKategoriHewan);
         umurHewan = findViewById(R.id.tvUmurHewan);
-        contact = findViewById(R.id.btContact);
+        contact = findViewById(R.id.btContactOrApproved);
 
         Intent intent = getIntent();
 
         String mNamaHewan = intent.getStringExtra("namaHewan");
         String mAlamatHewan = intent.getStringExtra("alamatHewan");
         String mGambarHewan = intent.getStringExtra("gambarHewan");
+        String mDeskripsiHewan = intent.getStringExtra("deskripsiHewan");
+        String mKategoriHewan = intent.getStringExtra("kategoriHewan");
+        String mUmurHewan = intent.getStringExtra("umurHewan");
 
         namaHewan.setText(mNamaHewan);
         alamatHewan.setText(mAlamatHewan);
+        deskripsiHewan.setText(mDeskripsiHewan);
+        kategoriHewan.setText(mKategoriHewan);
+        umurHewan.setText(mUmurHewan);
 
         Picasso.get().load(mGambarHewan).networkPolicy(NetworkPolicy.OFFLINE).into(gambarHewan, new Callback() {
             @Override

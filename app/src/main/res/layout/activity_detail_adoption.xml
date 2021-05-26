@@ -82,7 +82,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btContact"
+        android:id="@+id/btContactOrApproved"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Contact"

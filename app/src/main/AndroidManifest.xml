@@ -15,9 +15,7 @@
         </activity>
         <activity android:name=".UI.Kosongan2Activity" />
         <activity android:name=".UI.KosonganActivity" />
-        <activity
-            android:name=".UI.Adoption1.DetailAdoptionActivity"
-            android:parentActivityName=".UI.Adoption1.AdoptionActivity" />
+
         <activity android:name=".UI.PCSurabayaTwoDetailActivity" />
         <activity android:name=".UI.PCSurabayaOneDetailActivity" />
         <activity android:name=".UI.PCMalangTwoDetailActivity" />
@@ -29,7 +27,7 @@
 
         <activity android:name=".UI.Homepage1.HomepageActivity" /> <!-- <activity android:name=".UI.Adoption1.AdoptionActivity"> -->
 
-
+<!--        Login-->
         <activity android:name=".UI.Login.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,9 +42,18 @@
             android:name=".UI.Login.LoginActivity"
             android:parentActivityName=".UI.Login.StartActivity" />
 
+<!--        Adoption1-->
+        <activity android:name=".UI.Adoption1.AdoptionActivity"
+            android:parentActivityName=".UI.Homepage1.HomepageActivity"/>
+        <activity
+            android:name=".UI.Adoption1.DetailAdoptionActivity"
+            android:parentActivityName=".UI.Adoption1.AdoptionActivity" />
+
+
+<!--        HomePage 2-->
         <activity android:name=".UI.Homepage2.Homepage2Activity" />
         <activity
-            android:name=".UI.Homepage2.PostPetActivity"
+            android:name=".UI.Adoption2.PostPetActivity"
             android:parentActivityName=".UI.Homepage2.Homepage2Activity"/>
     </application>
 

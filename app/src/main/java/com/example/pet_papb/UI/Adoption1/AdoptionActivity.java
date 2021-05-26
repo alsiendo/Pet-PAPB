@@ -85,10 +85,12 @@ public class AdoptionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
-
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
+                        intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
+                        intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
+                        intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
                         startActivity(intent);
                     }
                 });
@@ -118,6 +120,9 @@ public class AdoptionActivity extends AppCompatActivity {
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
+                        intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
+                        intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
+                        intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
                         startActivity(intent);
                     }
                 });
@@ -147,6 +152,9 @@ public class AdoptionActivity extends AppCompatActivity {
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
+                        intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
+                        intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
+                        intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
                         startActivity(intent);
                     }
                 });
@@ -182,7 +190,6 @@ public class AdoptionActivity extends AppCompatActivity {
                 public void onSuccess() {
 
                 }
-
                 @Override
                 public void onError(Exception e) {
                     Picasso.get().load(gambar).into(gambarHewan);

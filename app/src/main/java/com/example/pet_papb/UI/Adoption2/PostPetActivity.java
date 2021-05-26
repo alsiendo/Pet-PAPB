@@ -1,6 +1,5 @@
-package com.example.pet_papb.UI.Homepage2;
+package com.example.pet_papb.UI.Adoption2;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,16 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,22 +21,16 @@ import android.widget.Toast;
 
 import com.example.pet_papb.Model.DataAdoption;
 import com.example.pet_papb.R;
-import com.example.pet_papb.UI.Homepage1.HomepageActivity;
-import com.example.pet_papb.UI.Login.LoginActivity;
-import com.google.android.gms.tasks.OnFailureListener;
+import com.example.pet_papb.UI.Homepage2.Homepage2Activity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-
-import java.io.IOException;
-import java.util.UUID;
 
 public class PostPetActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private EditText etNamaHewan, etUmurHewan, etDeskripsiHewan;
@@ -140,11 +129,11 @@ public class PostPetActivity extends AppCompatActivity implements View.OnClickLi
                     if(jenisHewan.equalsIgnoreCase("Anjing")){
                         mStorageRef = FirebaseStorage.getInstance().getReference("DogAdoptionList");
                         mDatabaseRef = FirebaseDatabase.getInstance().getReference("DogAdoptionList");
-                    }else{
+                    }else if (jenisHewan.equalsIgnoreCase("Kelinci")){
                         mStorageRef = FirebaseStorage.getInstance().getReference("RabbitAdoptionList");
                         mDatabaseRef = FirebaseDatabase.getInstance().getReference("RabbitAdoptionList");
                     }
-                    uploadPost(namaHewan, umurHewan, jenisHewan, lokasiHewan, deskripsihewan);
+                    uploadPost(namaHewan, umurHewan, lokasiHewan, jenisHewan, deskripsihewan);
                 }
                 break;
         }
@@ -160,15 +149,17 @@ public class PostPetActivity extends AppCompatActivity implements View.OnClickLi
         progressDialog.setTitle("Post is Uploading...");
         progressDialog.show();
         StorageReference storageReference2 = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
-        storageReference2.putFile(mImageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        storageReference2.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Post Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                storageReference2.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        String URLIMAGE = taskSnapshot.getUploadSessionUri().toString();
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Post Uploaded Successfully ", Toast.LENGTH_LONG).show();
-                        @SuppressWarnings("VisibleForTests")
+                    public void onSuccess(Uri uri) {
+                        String URLIMAGE = uri.toString();
                         DataAdoption dataAdoption = new DataAdoption(URLIMAGE, nama, umur, lokasi, jenis, deskripsi, firebaseUser.getUid(),"tersedia");
+
                         String ImageID = mDatabaseRef.push().getKey();
                         mDatabaseRef.child(ImageID).setValue(dataAdoption);
 
@@ -178,6 +169,8 @@ public class PostPetActivity extends AppCompatActivity implements View.OnClickLi
                         finish();
                     }
                 });
+            }
+        });
     }
 
     @Override

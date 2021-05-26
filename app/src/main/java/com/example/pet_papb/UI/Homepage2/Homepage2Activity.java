@@ -9,13 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.pet_papb.R;
+import com.example.pet_papb.UI.Adoption2.PostPetActivity;
 import com.example.pet_papb.UI.Homepage1.ChatFragment;
-import com.example.pet_papb.UI.Homepage1.HomeFragment;
-import com.example.pet_papb.UI.Homepage1.HomepageActivity;
-import com.example.pet_papb.UI.Homepage1.MyPetFragment;
 import com.example.pet_papb.UI.Homepage1.ProfileFragment;
-import com.example.pet_papb.UI.Login.LoginActivity;
-import com.example.pet_papb.UI.Login.StartActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Homepage2Activity extends AppCompatActivity {
