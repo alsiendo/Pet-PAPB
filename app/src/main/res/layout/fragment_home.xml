@@ -16,7 +16,8 @@
         app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.191"
+        app:srcCompat="@drawable/petcare_btn" />
 
     <TextView
         android:id="@+id/textViewBtnPetCare"
@@ -42,7 +43,8 @@
         app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.189"
+        app:srcCompat="@drawable/adoption_btn" />
 
     <TextView
         android:id="@+id/textViewBtnPetAdoption"

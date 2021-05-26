@@ -6,24 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".UI.Login.SignupActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-
-    <TextView
-        android:id="@+id/registertextViewAloPet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
-        android:gravity="center_horizontal"
-        android:text="AloPet"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewCreateYourAccount"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="526dp"
+        android:layout_height="730dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login2" />
 
     <TextView
         android:id="@+id/textViewCreateYourAccount"
