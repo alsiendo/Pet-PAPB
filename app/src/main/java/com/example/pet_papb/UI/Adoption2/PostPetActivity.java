@@ -54,11 +54,6 @@ public class PostPetActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_post_pet);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Post a Pet");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         mStorageRef = FirebaseStorage.getInstance().getReference("CatAdoptionList");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("CatAdoptionList");
         progressDialog = new ProgressDialog(PostPetActivity.this);

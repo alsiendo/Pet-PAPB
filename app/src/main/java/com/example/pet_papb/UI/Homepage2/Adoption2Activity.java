@@ -49,7 +49,7 @@ public class Adoption2Activity extends AppCompatActivity {
 
         // CAT RECYCLER VIEW
         catRecycler = findViewById(R.id.cat_rv);
-        LinearLayoutManager lmCat = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager lmCat = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         lmCat.setReverseLayout(true);
         lmCat.setStackFromEnd(true);
         catRecycler.setHasFixedSize(true);
@@ -57,7 +57,7 @@ public class Adoption2Activity extends AppCompatActivity {
 
         // DOG RECYCLER VIEW
         dogRecycler = findViewById(R.id.dog_rv);
-        LinearLayoutManager lmDog = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager lmDog = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         lmDog.setReverseLayout(true);
         lmDog.setStackFromEnd(true);
         dogRecycler.setHasFixedSize(true);
@@ -65,7 +65,7 @@ public class Adoption2Activity extends AppCompatActivity {
 
         // RABBIT RECYCLER VIEW
         rabbitRecycler = findViewById(R.id.rabbit_rv);
-        LinearLayoutManager lmRabbit = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager lmRabbit = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         lmRabbit.setReverseLayout(true);
         lmRabbit.setStackFromEnd(true);
         rabbitRecycler.setHasFixedSize(true);

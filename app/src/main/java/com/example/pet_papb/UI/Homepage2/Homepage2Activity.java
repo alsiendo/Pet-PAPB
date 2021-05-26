@@ -28,29 +28,32 @@ public class Homepage2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_homepage2);
 
-        bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav = findViewById(R.id.bottomNavigationViewAdmin);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AdoptionHomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ChatFragment()).commit();
+        bottomNav.setSelectedItemId(R.id.nav_home_chat);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
         new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = new AdoptionHomeFragment();
+
+                Fragment selectedFragment = new ChatFragment();
 
                 switch (item.getItemId()){
-                    case R.id.nav_home:
-                        selectedFragment = new AdoptionHomeFragment();
-                        break;
-                    case R.id.nav_chat:
+                    case R.id.nav_home_chat:
                         selectedFragment = new ChatFragment();
                         break;
+                    case R.id.nav_chat_myPet:
+                        Intent intent = new Intent(Homepage2Activity.this, Adoption2Activity.class);
+                        startActivity(intent);
+                        break;
                     case R.id.nav_myPet:
-                        Intent intent = new Intent(Homepage2Activity.this, PostPetActivity.class);
+                        intent = new Intent(Homepage2Activity.this, PostPetActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_profile:
