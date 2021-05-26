@@ -1,8 +1,4 @@
-package com.example.pet_papb.UI.Adoption1;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.pet_papb.UI.Adoption2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +6,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.pet_papb.Model.DataAdoption;
 import com.example.pet_papb.R;
+import com.example.pet_papb.UI.Adoption1.DetailAdoptionActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +22,7 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
-public class AdoptionActivity extends AppCompatActivity {
+public class Adoption2Activity extends AppCompatActivity {
 
     private RecyclerView catRecycler;
     private RecyclerView dogRecycler;
@@ -42,7 +44,7 @@ public class AdoptionActivity extends AppCompatActivity {
 
         // CAT RECYCLER VIEW
         catRecycler = findViewById(R.id.cat_rv);
-        LinearLayoutManager lmCat = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager lmCat = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         lmCat.setReverseLayout(true);
         lmCat.setStackFromEnd(true);
         catRecycler.setHasFixedSize(true);
@@ -50,7 +52,7 @@ public class AdoptionActivity extends AppCompatActivity {
 
         // DOG RECYCLER VIEW
         dogRecycler = findViewById(R.id.dog_rv);
-        LinearLayoutManager lmDog = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager lmDog = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         lmDog.setReverseLayout(true);
         lmDog.setStackFromEnd(true);
         dogRecycler.setHasFixedSize(true);
@@ -58,7 +60,7 @@ public class AdoptionActivity extends AppCompatActivity {
 
         // RABBIT RECYCLER VIEW
         rabbitRecycler = findViewById(R.id.rabbit_rv);
-        LinearLayoutManager lmRabbit = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager lmRabbit = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         lmRabbit.setReverseLayout(true);
         lmRabbit.setStackFromEnd(true);
         rabbitRecycler.setHasFixedSize(true);
@@ -88,7 +90,7 @@ public class AdoptionActivity extends AppCompatActivity {
                 catViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
@@ -119,7 +121,7 @@ public class AdoptionActivity extends AppCompatActivity {
                 dogViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
@@ -151,7 +153,7 @@ public class AdoptionActivity extends AppCompatActivity {
                 rabbitViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(AdoptionActivity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
