@@ -23,11 +23,11 @@
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/bottomNavigationViewAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="608dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation_admin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
