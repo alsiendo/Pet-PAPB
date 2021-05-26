@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Homepage1.ProfileFragment">
+    tools:context=".UI.Homepage1.EditProfileActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="520dp"
+        android:layout_height="510dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
@@ -48,9 +48,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/profileImage"/>
-            <TextView
-                android:id="@+id/textUsername"
-                android:text="Jane Doe"
+            <EditText
+                android:id="@+id/editTextUsername"
+                android:hint="Jane Doe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -72,14 +72,14 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textUsername" />
-            <TextView
-                android:id="@+id/textDate"
+                app:layout_constraintTop_toBottomOf="@id/editTextUsername" />
+            <EditText
+                android:id="@+id/editTextDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:text="April 25, 2000"
+                android:hint="April 25, 2000"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,14 +97,14 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textDate" />
-            <TextView
-                android:id="@+id/textGender"
+                app:layout_constraintTop_toBottomOf="@id/editTextDate" />
+            <EditText
+                android:id="@+id/editTextGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:text="Female"
+                android:hint="Female"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,62 +122,33 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textGender" />
-            <TextView
-                android:id="@+id/textAddress"
+                app:layout_constraintTop_toBottomOf="@id/editTextGender" />
+            <EditText
+                android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:text="Jln. Veteran, Malang"
+                android:hint="Jln. Veteran, Malang"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewAddress" />
-            
 
             <Button
-                android:id="@+id/btnLogOut"
-                android:layout_width="190dp"
-                android:layout_height="39dp"
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="75dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="75dp"
                 android:background="@android:color/holo_blue_light"
-                android:text="Logout"
+                android:text="Save"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textAddress" />
-
-            <Button
-                android:id="@+id/buttonEdit"
-                android:layout_width="190dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="75dp"
-                android:background="@android:color/holo_blue_light"
-                android:text="Edit Profile"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnLogOut" />
-
-            <Button
-                android:id="@+id/buttonChangePassword"
-                android:layout_width="190dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="75dp"
-                android:background="@android:color/holo_blue_light"
-                android:text="Change Password"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonEdit" />
+                app:layout_constraintTop_toBottomOf="@id/editTextAddress" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
