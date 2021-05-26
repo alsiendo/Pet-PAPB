@@ -26,6 +26,7 @@ public class StartActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
     DatabaseReference db;
+    //Hmm
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
