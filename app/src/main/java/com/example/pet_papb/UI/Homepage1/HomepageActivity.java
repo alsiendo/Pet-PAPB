@@ -37,9 +37,6 @@ public class HomepageActivity extends AppCompatActivity {
                     case R.id.nav_chat:
                         selectedFragment = new ChatFragment();
                         break;
-                    case R.id.nav_myPet:
-                        selectedFragment = new MyPetFragment();
-                        break;
                     case R.id.nav_profile:
                         selectedFragment = new ProfileFragment();
                         break;

@@ -51,6 +51,9 @@
             android:parentActivityName=".UI.Homepage2.Homepage2Activity"/>
         <activity android:name=".UI.Homepage2.Adoption2Activity"
             android:parentActivityName=".UI.Homepage2.Homepage2Activity"/>
+        <activity
+            android:name=".UI.Adoption2.DetailAdoptionActivity2"
+            android:parentActivityName=".UI.Homepage2.Adoption2Activity" />
     </application>
 
 </manifest>

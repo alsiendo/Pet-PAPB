@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pet_papb.Model.DataAdoption;
 import com.example.pet_papb.R;
 import com.example.pet_papb.UI.Adoption1.DetailAdoptionActivity;
+import com.example.pet_papb.UI.Adoption2.DetailAdoptionActivity2;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -97,13 +98,14 @@ public class Adoption2Activity extends AppCompatActivity {
                 catViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity2.class);
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
                         intent.putExtra("gambarHewan", dataAdoption.getGambarHewan());
                         intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
                         intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
                         intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
+                        intent.putExtra("statusKepemilikan", dataAdoption.getStatusKepemilikan());
                         startActivity(intent);
                     }
                 });
@@ -128,7 +130,7 @@ public class Adoption2Activity extends AppCompatActivity {
                 dogViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity2.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
@@ -136,6 +138,7 @@ public class Adoption2Activity extends AppCompatActivity {
                         intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
                         intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
                         intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
+                        intent.putExtra("statusKepemilikan", dataAdoption.getStatusKepemilikan());
                         startActivity(intent);
                     }
                 });
@@ -160,7 +163,7 @@ public class Adoption2Activity extends AppCompatActivity {
                 rabbitViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity.class);
+                        Intent intent = new Intent(Adoption2Activity.this, DetailAdoptionActivity2.class);
 
                         intent.putExtra("namaHewan", dataAdoption.getNamaHewan());
                         intent.putExtra("alamatHewan", dataAdoption.getLokasiHewan());
@@ -168,6 +171,7 @@ public class Adoption2Activity extends AppCompatActivity {
                         intent.putExtra("deskripsiHewan", dataAdoption.getDeskripsiHewan());
                         intent.putExtra("kategoriHewan", dataAdoption.getJenisHewan());
                         intent.putExtra("umurHewan", dataAdoption.getUmurHewan());
+                        intent.putExtra("statusKepemilikan", dataAdoption.getStatusKepemilikan());
                         startActivity(intent);
                     }
                 });

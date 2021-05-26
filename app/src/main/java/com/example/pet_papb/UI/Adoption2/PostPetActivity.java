@@ -97,6 +97,9 @@ public class PostPetActivity extends AppCompatActivity implements View.OnClickLi
                 openFileChooser();
                 break;
             case R.id.btnCancel:
+                Intent intent = new Intent(PostPetActivity.this, Homepage2Activity.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.btnUpload:
                 String namaHewan = etNamaHewan.getText().toString().trim();

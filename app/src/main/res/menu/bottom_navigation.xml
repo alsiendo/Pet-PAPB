@@ -9,10 +9,6 @@
         android:icon="@drawable/ic_baseline_mail_outline_24"
         android:title="Chat"/>
     <item
-        android:id="@+id/nav_myPet"
-        android:icon="@drawable/ic_baseline_pets_24"
-        android:title="My Pet"/>
-    <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_baseline_account_box_24"
         android:title="Profile"/>
