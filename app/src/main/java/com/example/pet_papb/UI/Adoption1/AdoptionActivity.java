@@ -182,7 +182,7 @@ public class AdoptionActivity extends AppCompatActivity {
         }
 
         public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
+            TextView alamatHewan = myview.findViewById(R.id.statusHewan);
             alamatHewan.setText(alamat);
         }
 
@@ -216,7 +216,7 @@ public class AdoptionActivity extends AppCompatActivity {
         }
 
         public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
+            TextView alamatHewan = myview.findViewById(R.id.statusHewan);
             alamatHewan.setText(alamat);
         }
 
@@ -251,7 +251,7 @@ public class AdoptionActivity extends AppCompatActivity {
         }
 
         public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
+            TextView alamatHewan = myview.findViewById(R.id.statusHewan);
             alamatHewan.setText(alamat);
         }
 

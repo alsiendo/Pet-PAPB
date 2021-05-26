@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".UI.Adoption2.PostPetActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="526dp"
+        android:layout_height="740dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/petadoptionup12" />
 
     <TextView
         android:id="@+id/tvNama"
@@ -16,11 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="425dp"
         android:text="Nama"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:textSize="14sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etNamaHewan"
@@ -31,9 +40,9 @@
         android:layout_marginTop="10dp"
         android:ems="15"
         android:hint="Tulis nama hewan peliharaan anda ..."
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNama"
-        android:textSize="14sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvNama" />
 
     <TextView
         android:id="@+id/tvUmur"
@@ -55,9 +64,9 @@
         android:layout_marginTop="10dp"
         android:ems="15"
         android:hint="Tulis umur hewan peliharaan anda ..."
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUmur"
-        android:textSize="14sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvUmur" />
 
     <TextView
         android:id="@+id/tvLokasi"
@@ -78,9 +87,9 @@
         android:layout_marginLeft="35dp"
         android:layout_marginTop="10dp"
         android:ems="15"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLokasi"
-        android:textSize="14sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvLokasi" />
 
     <TextView
         android:id="@+id/tvJenis"
@@ -123,12 +132,12 @@
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="10dp"
-        android:maxLines="2"
-        android:textSize="14sp"
         android:ems="15"
         android:gravity="start|top"
         android:hint="Tulis deskripsi hewan"
         android:inputType="textMultiLine"
+        android:maxLines="2"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDeskripsi" />
 
@@ -179,12 +188,13 @@
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="120dp"
-        android:layout_height="130dp"
+        android:layout_height="0dp"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAttachImage" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNama" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".UI.Homepage1.HomepageActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="730dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fragment_container"
+        app:layout_constraintTop_toTopOf="@+id/fragment_container"
+        app:srcCompat="@drawable/homepage12" />
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

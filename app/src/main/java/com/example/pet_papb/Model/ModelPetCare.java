@@ -1,4 +1,4 @@
-package com.example.pet_papb.UI;
+package com.example.pet_papb.Model;
 
 public class ModelPetCare {
     private String title, description;

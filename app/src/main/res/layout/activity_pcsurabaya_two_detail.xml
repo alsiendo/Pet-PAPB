@@ -7,6 +7,16 @@
     tools:context=".UI.PCSurabayaTwoDetailActivity"
     android:padding="16dp"
     android:background="#fff">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="526dp"
+        android:layout_height="730dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepage12" />
+
     <Button
         android:id="@+id/buttonBackPetCareDetail"
         android:layout_width="50dp"
@@ -136,4 +146,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
