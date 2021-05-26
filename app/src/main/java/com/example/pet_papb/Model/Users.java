@@ -2,7 +2,7 @@ package com.example.pet_papb.Model;
 
 public class Users {
 
-    public String userName, email, password, imageURL, date, gender, address, status;
+    public String id,userName, email, password, imageURL, date, gender, address, status;
 
     public Users(){
 
@@ -17,6 +17,26 @@ public class Users {
         this.gender = "default";
         this.address = "default";
         this.status = status;
+    }
+
+    public Users(String id, String userName, String email, String password, String imageURL, String date, String gender, String address, String status){
+        this.id = id;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.imageURL = "default";
+        this.date = "default";
+        this.gender = "default";
+        this.address = "default";
+        this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserName() {

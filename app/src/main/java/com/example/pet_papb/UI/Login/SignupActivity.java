@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView login, registerUser;
@@ -110,7 +112,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
                                 reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
-                                Users user = new Users(username, email, password, "blank", "blank", "blank", "blank", "Admin");
+                                Users user = new Users(userid, username, email, password, "blank", "blank", "blank", "blank", "Admin");
 
                                 reference.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
@@ -134,7 +136,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                 String userid = firebaseUser.getUid();
 
                                 reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
-                                Users user = new Users(username, email, password, "blank", "blank", "blank", "blank", "Default");
+
+                                Users user = new Users(userid, username, email, password, "blank", "blank", "blank", "blank", "Default");
+
 
                                 reference.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
