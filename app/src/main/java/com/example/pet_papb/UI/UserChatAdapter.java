@@ -48,7 +48,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, MessageActivity.class);
-                intent.putExtra("email", user.getEmail());
+                intent.putExtra("userid", user.getId());
                 mContext.startActivity(intent);
             }
         });

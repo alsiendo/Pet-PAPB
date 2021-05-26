@@ -49,6 +49,7 @@ public class MessageActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+    String useremail;
 
     Intent intent;
 
@@ -80,7 +81,7 @@ public class MessageActivity extends AppCompatActivity {
         text_send = findViewById(R.id.text_send);
 
         intent = getIntent();
-        String useremail = intent.getStringExtra("email");
+        useremail = intent.getStringExtra("userid");
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
         btn_send.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +99,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
 //        encodeUserEmail(fuser.getEmail());
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(encodeUserEmail(fuser.getEmail()));
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(useremail);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -115,7 +116,7 @@ public class MessageActivity extends AppCompatActivity {
                     Glide.with(MessageActivity.this).load(user.getImageURL()).into(profile_image);
                 }
 
-                readMessages(fuser.getUid(), useremail, user.getImageURL());
+                readMessages(fuser.getUid(), useremail, user.getId());
 //                readMessages(fuser.getUid(),useremail);
 
 //                profile_image.setImageResource(R.mipmap.ic_launcher);
