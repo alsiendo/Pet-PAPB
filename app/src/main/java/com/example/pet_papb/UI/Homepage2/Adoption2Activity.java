@@ -1,5 +1,6 @@
-package com.example.pet_papb.UI.Adoption2;
+package com.example.pet_papb.UI.Homepage2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.example.pet_papb.Model.DataAdoption;
 import com.example.pet_papb.R;
 import com.example.pet_papb.UI.Adoption1.DetailAdoptionActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -31,6 +34,8 @@ public class Adoption2Activity extends AppCompatActivity {
     private DatabaseReference catAdoptionDatabase;
     private DatabaseReference dogAdoptionDatabase;
     private DatabaseReference rabbitAdoptionDatabase;
+
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,22 +75,24 @@ public class Adoption2Activity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Query queryCat = catAdoptionDatabase.orderByChild("statusKepemilikan").equalTo("tersedia");
-        Query queryDog = dogAdoptionDatabase.orderByChild("statusKepemilikan").equalTo("tersedia");
-        Query queryRabbit = rabbitAdoptionDatabase.orderByChild("statusKepemilikan").equalTo("tersedia");
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        Query queryCat = catAdoptionDatabase.orderByChild("idPemilik").equalTo(firebaseUser.getUid());
+        Query queryDog = dogAdoptionDatabase.orderByChild("idPemilik").equalTo(firebaseUser.getUid());
+        Query queryRabbit = rabbitAdoptionDatabase.orderByChild("idPemilik").equalTo(firebaseUser.getUid());
 
         FirebaseRecyclerAdapter<DataAdoption, CatViewHolder> adapterCat = new FirebaseRecyclerAdapter<DataAdoption, CatViewHolder>
                 (
                         DataAdoption.class,
-                        R.layout.item_data_adoption,
+                        R.layout.item_data_adoption_admin,
                         CatViewHolder.class,
                         queryCat
                 ) {
             @Override
             protected void populateViewHolder(CatViewHolder catViewHolder, DataAdoption dataAdoption, int i) {
                 catViewHolder.setNama(dataAdoption.getNamaHewan());
-                catViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 catViewHolder.setGambar(dataAdoption.getGambarHewan());
+                catViewHolder.setStatus(dataAdoption.getStatusKepemilikan());
 
                 catViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -108,15 +115,15 @@ public class Adoption2Activity extends AppCompatActivity {
         FirebaseRecyclerAdapter<DataAdoption, DogViewHolder> adapterDog = new FirebaseRecyclerAdapter<DataAdoption, DogViewHolder>
                 (
                         DataAdoption.class,
-                        R.layout.item_data_adoption,
+                        R.layout.item_data_adoption_admin,
                         DogViewHolder.class,
                         queryDog
                 ) {
             @Override
             protected void populateViewHolder(DogViewHolder dogViewHolder, DataAdoption dataAdoption, int i) {
                 dogViewHolder.setNama(dataAdoption.getNamaHewan());
-                dogViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 dogViewHolder.setGambar(dataAdoption.getGambarHewan());
+                dogViewHolder.setStatus(dataAdoption.getStatusKepemilikan());
 
                 dogViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -140,15 +147,15 @@ public class Adoption2Activity extends AppCompatActivity {
         FirebaseRecyclerAdapter<DataAdoption, RabbitViewHolder> adapterRabbit = new FirebaseRecyclerAdapter<DataAdoption, RabbitViewHolder>
                 (
                         DataAdoption.class,
-                        R.layout.item_data_adoption,
+                        R.layout.item_data_adoption_admin,
                         RabbitViewHolder.class,
                         queryRabbit
                 ) {
             @Override
             protected void populateViewHolder(RabbitViewHolder rabbitViewHolder, DataAdoption dataAdoption, int i) {
                 rabbitViewHolder.setNama(dataAdoption.getNamaHewan());
-                rabbitViewHolder.setAlamat(dataAdoption.getLokasiHewan());
                 rabbitViewHolder.setGambar(dataAdoption.getGambarHewan());
+                rabbitViewHolder.setStatus(dataAdoption.getStatusKepemilikan());
 
                 rabbitViewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -183,9 +190,14 @@ public class Adoption2Activity extends AppCompatActivity {
             namaHewan.setText(nama);
         }
 
-        public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
-            alamatHewan.setText(alamat);
+        @SuppressLint("ResourceAsColor")
+        public void setStatus(String status){
+            TextView statusHewan = myview.findViewById(R.id.statusHewan);
+            statusHewan.setText("Waiting new owner");
+            if(status.equalsIgnoreCase("diambil")){
+                statusHewan.setText("Got new owner");
+                statusHewan.setBackgroundColor(R.color.warna_diambil);
+            }
         }
 
         public void setGambar(String gambar){
@@ -217,9 +229,14 @@ public class Adoption2Activity extends AppCompatActivity {
             namaHewan.setText(nama);
         }
 
-        public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
-            alamatHewan.setText(alamat);
+        @SuppressLint("ResourceAsColor")
+        public void setStatus(String status){
+            TextView statusHewan = myview.findViewById(R.id.statusHewan);
+            statusHewan.setText("Waiting new owner");
+            if(status.equalsIgnoreCase("diambil")){
+                statusHewan.setText("Got new owner");
+                statusHewan.setBackgroundColor(R.color.warna_diambil);
+            }
         }
 
         public void setGambar(String gambar){
@@ -252,9 +269,14 @@ public class Adoption2Activity extends AppCompatActivity {
             namaHewan.setText(nama);
         }
 
-        public void setAlamat(String alamat){
-            TextView alamatHewan = myview.findViewById(R.id.alamatHewan);
-            alamatHewan.setText(alamat);
+        @SuppressLint("ResourceAsColor")
+        public void setStatus(String status){
+            TextView statusHewan = myview.findViewById(R.id.statusHewan);
+            statusHewan.setText("Waiting new owner");
+            if(status.equalsIgnoreCase("diambil")){
+                statusHewan.setText("Got new owner");
+                statusHewan.setBackgroundColor(R.color.warna_diambil);
+            }
         }
 
         public void setGambar(String gambar){
