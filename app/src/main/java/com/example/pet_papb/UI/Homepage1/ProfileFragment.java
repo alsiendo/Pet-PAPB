@@ -32,6 +32,7 @@ public class ProfileFragment extends Fragment {
     View view;
     Button logOut;
     Button editProfile;
+    Button changePass;
 
     CircleImageView profileImage;
     TextView username;
@@ -53,6 +54,8 @@ public class ProfileFragment extends Fragment {
         date = (TextView) view.findViewById(R.id.textDate);
         gender = (TextView) view.findViewById(R.id.textGender);
         address = (TextView) view.findViewById(R.id.textAddress);
+
+        changePass = view.findViewById(R.id.buttonChangePassword);
 
         editProfile = (Button) view.findViewById(R.id.buttonEdit);
 
@@ -80,13 +83,10 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity(), EditProfileActivity.class));
-                getActivity().finish();
             }
         });
 
@@ -95,6 +95,14 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity(), StartActivity.class));
+                getActivity().finish();
+            }
+        });
+
+        changePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
                 getActivity().finish();
             }
         });
